@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var LastNameField: UITextField!
     @IBOutlet weak var sendButtonUI: UIButton!
     
-    var viewModel = DataViewModel(Fname: "", Lname: "")
+    var viewModel: DataViewModel?
     var dpBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -394,13 +394,20 @@ class ViewController: UIViewController {
         FirstNameField.text = ""
         LastNameField.text = ""
         sendButtonUI.isEnabled = false
+    } 
+    
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        let showVC = self.storyboard?.instantiateViewController(withIdentifier: "showTextStoryBoard") as! ShowViewController
+        
+        viewModel = DataViewModel(Fname: FirstNameField.text!, Lname: LastNameField.text!)
+        showVC.ShowData = viewModel
+        
+        self.navigationController?.pushViewController(showVC, animated: true)
+        
+        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let ShowVC = segue.destination as? ShowViewController else {return}
-        viewModel = DataViewModel(Fname: FirstNameField.text!, Lname: LastNameField.text!)
-        ShowVC.ShowData = viewModel
-    }
+    
     
     
 }

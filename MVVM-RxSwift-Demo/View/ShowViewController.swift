@@ -17,7 +17,6 @@ class ShowViewController: UIViewController {
     @IBOutlet weak var rxText: UILabel!
     
     let dispose = DisposeBag()
-    
     var ShowData:DataViewModel?
     
     override func viewDidLoad() {

@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
-                                    <segue destination="BX0-T2-FJu" kind="show" id="CgM-9i-Xhu"/>
+                                    <action selector="sendButtonPressed:" destination="3Bn-5I-tjj" eventType="touchUpInside" id="xch-tr-gKr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,7 +58,7 @@
         <!--Show-->
         <scene sceneID="SkI-0W-fyW">
             <objects>
-                <viewController id="BX0-T2-FJu" customClass="ShowViewController" customModule="MVVM_SendText" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showTextStoryBoard" id="BX0-T2-FJu" customClass="ShowViewController" customModule="MVVM_SendText" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4yy-ql-P6h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
