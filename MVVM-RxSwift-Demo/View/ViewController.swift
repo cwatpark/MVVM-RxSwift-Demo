@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendButtonUI.isEnabled = false
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
         //MARK: - RxSwift Basic
         self.initialSubScription()
         
@@ -388,6 +388,12 @@ class ViewController: UIViewController {
             pSubject.onNext("💚")
         })
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        FirstNameField.text = ""
+        LastNameField.text = ""
+        sendButtonUI.isEnabled = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

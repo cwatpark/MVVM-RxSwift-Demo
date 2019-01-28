@@ -20,6 +20,7 @@ class AddTextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Add Rx Text"
         
     }
     
