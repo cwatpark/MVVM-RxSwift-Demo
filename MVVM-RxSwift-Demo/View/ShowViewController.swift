@@ -42,6 +42,9 @@ class ShowViewController: UIViewController {
             .subscribe(onNext : {[weak self] textName in
                 if textName.count > 0{
                     self?.rxText.text = textName
+                    print("Text : [\(textName)]")
+                }else{
+                    print("Text is Empty")
                 }
             }).disposed(by: dispose)
         self.navigationController?.pushViewController(selectedAddVC, animated: true)
